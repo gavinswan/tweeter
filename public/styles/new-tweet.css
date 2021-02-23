@@ -17,11 +17,29 @@
 .content {
   color:#545149;
   padding-bottom: 1em;
-  border-bottom-width: 1em;
+  border-bottom-width: 10px;
+}
+#tweet-text {
+  color:#545149;
+  background-color: #f4f1ec;
+  font-family: "Source Sans Pro", sans-serif;
+  border: none;
+  resize: none;
+  border-bottom: 5px solid #545149;
+  font-weight: bold;
 }
 .click {
   color:#545149;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: bungee;
+}
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
 }
