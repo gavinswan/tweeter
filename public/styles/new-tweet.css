@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  color: #545149;
+  background-color: #f4f1ec;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content {
+  color:#545149;
+  padding-bottom: 1em;
+  border-bottom-width: 1em;
+}
+.click {
+  color:#545149;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
