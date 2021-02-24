@@ -9,12 +9,10 @@
   padding-top: 1em;
   padding-bottom: 1em;
 }
-.new-tweet {
+.content {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.content {
   color:#545149;
   padding-bottom: 1em;
   border-bottom-width: 10px;
@@ -34,6 +32,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: bungee;
+  padding-bottom: 2em;
 }
 .button {
   background-color: blue;

@@ -1,0 +1,71 @@
+/* Container that holds all tweets */
+article.tweet {
+  border: 4px solid #545149;
+  padding: 10px 20px;
+  color: #545149;
+  font-family: "Source Sans Pro", sans-serif;
+  opacity: 75%;
+}
+
+article.tweet:hover {
+  border: 4px solid #6b685e;
+  padding: 10px 20px;
+  box-shadow: 10px 10px #aaa7a0;
+  font-weight: bold;
+  opacity: 100%;
+}
+
+/* Tweet box header */
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* User handle (@Marner) */
+.handle {
+  color: #99968c;
+  opacity: 0;
+}
+
+.handle:hover {
+  color: #99968c;
+  opacity: 1;
+}
+
+/* Tweet footer */
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+article.tweet footer:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* All icons */
+.fas {
+  margin-right: 5px;
+  color:#545149;
+}
+
+/* Actual tweet quote */
+.tweeter {
+  color:#545149;
+  background-color: #f4f1ec;
+  font-family: "Source Sans Pro", sans-serif;
+  border: none;
+  resize: none;
+  border-bottom: 3px solid #545149;
+  font-weight: bold;
+  padding: 1em 1em 1em 0;
+  margin-bottom: 10px;
+  
+}
+

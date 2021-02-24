@@ -1,4 +1,4 @@
-header {
+.profile-background {
   height: 400px;
   width: 100%;
   display: flex;
@@ -11,7 +11,7 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 
 }
-div {
-  font-family: "Source Sans Pro";
+.tweeter-name {
+  font-family: "Source Sans Pro", sans-serif;
   color: #FFFFFF;
 }
