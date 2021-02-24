@@ -1,6 +1,5 @@
-$(document).ready(function() {
-  
-  //counts all items entered into form, including the number of backspace key presses needed to delete everything in form
+//counts all items entered into form, including the number of backspace key presses needed to delete everything in form
+const characterCounter = function() {
   $("#tweet-text").on("input", function() {
     const max = 140;
     let length = $(this).val().length;
@@ -9,12 +8,19 @@ $(document).ready(function() {
       $("#counter").text(numOfCharsLeft, "You have reached the limit");
       $("#counter").css("color", "red")
     } else {
-      $("#counter").css("color", "black")
+      $("#counter").css("color", "#545149")
       $("#counter").text(numOfCharsLeft + " characters left")
     }
     console.log(this);
   });
+}
+
+
+$(document).ready(function() {
+  characterCounter()
 });
+
+
 
 // notifies you when you change where on page you're focused
   // $("#tweet-text").on("change", function() {
