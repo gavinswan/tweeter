@@ -55,25 +55,33 @@ $(document).ready(function() {
       event.preventDefault();
       // Serialize() turns form data into query string because our server is configured to recieve that data format
       const serializeData = $(this).serialize();
-      // console.log(serializeData);
-      if (serializeData === "text=") {
-        alert("You didn't add anything to your tweet");
-      }
-      if (serializeData.length > 145) {
-        alert("You have exceded 140 characters");
-      } else {
-        $.ajax({ 
-          url:"/tweets", 
-          data: serializeData, 
-          method: "POST",
-          // success: function() {
-          //   console.log("success");
+      const textLength = $("#tweet-text").val().length;
+      if (!textLength) {
+        $("#msg").text("Your tweet must contain a message");
+        $("div#missing-msg").slideDown();
+        // $("div#missing-msg").hide().slideDown().delay(3000).slideUp()
+        // if (serializeData.length > 5) {
           // }
-        }).then(() => loadTweets())
-        $("#tweet-text").trigger("reset");
-        $("#counter").text(`140`);
+        return;
+        } 
+        if (textLength > 140) {
+          $("#msg").text("Your tweet is longer than 140 characters");
+          $("div#missing-msg").slideDown();
+          return;
+        } 
+          $.ajax({ 
+            url:"/tweets", 
+            data: serializeData, 
+            method: "POST",
+            // success: function() {
+              //   console.log("success");
+              // }
+            }).then(() => loadTweets())
+            $(".tweet-box").trigger("reset");
+            $("#counter").text(`140`);
+        $("div#missing-msg").slideUp();
+        $("div#long-msg").slideUp();
         $("#tweet-text").focus();
-      } 
     });
     const loadTweets = function() {
       $.ajax({
