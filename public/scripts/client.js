@@ -55,40 +55,37 @@ $(document).ready(function() {
       event.preventDefault();
       // Serialize() turns form data into query string because our server is configured to recieve that data format
       const serializeData = $(this).serialize();
-      const textLength = $("#tweet-text").val().length;
-      if (!textLength) {
-        $("#msg").text("Your tweet must contain a message");
-        $("div#missing-msg").slideDown();
-        // $("div#missing-msg").hide().slideDown().delay(3000).slideUp()
-        // if (serializeData.length > 5) {
-          // }
-        return;
-        } 
-        if (textLength > 140) {
-          $("#msg").text("Your tweet is longer than 140 characters");
-          $("div#missing-msg").slideDown();
-          return;
-        } 
+      // $.val() is Jquery and returns the text value with the spaces
+          const textLength = $("#tweet-text").val().length;
+          if (!textLength) {
+            //inserts custom message in HTML
+            $("#msg").text("Your tweet must contain a message");
+            //coding to make the error message appear on page
+            $("div#error").slideDown();
+            return;
+          } 
+          if (textLength > 140) {
+            $("#msg").text("Your tweet is longer than 140 characters");
+            $("div#error").slideDown();
+            return;
+          } 
           $.ajax({ 
             url:"/tweets", 
             data: serializeData, 
             method: "POST",
-            // success: function() {
-              //   console.log("success");
-              // }
-            }).then(() => loadTweets())
-            $(".tweet-box").trigger("reset");
-            $("#counter").text(`140`);
-        $("div#missing-msg").slideUp();
-        $("div#long-msg").slideUp();
-        $("#tweet-text").focus();
+          }).then(() => loadTweets())
+            $(".tweet-box").trigger("reset"); //clear the message from the box after submit box is hit
+            $("#counter").text('140'); // resets counter to 140
+            $("div#error").slideUp(); // hides error message when problem is corrected, after submit button hit
+            $("#tweet-text").focus(); // activates cursor in text box automatically
+      });
+    
+      const loadTweets = function() {
+        $.ajax({
+          url: "/tweets", 
+          method: 'GET',
+          success: "this get request was a success"
+        }).then((tweets) => renderTweets(tweets))
+      }
+      loadTweets();
     });
-    const loadTweets = function() {
-      $.ajax({
-        url: "/tweets", 
-        method: 'GET',
-        success: "this get request was a success"
-      }).then((tweets) => renderTweets(tweets))
-    }
-    loadTweets();
-  });

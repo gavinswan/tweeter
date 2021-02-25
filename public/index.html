@@ -52,7 +52,11 @@
     <main class="container">
 
       <!-- <div id="long-msg" class="error-msg"><i class="fas fa-exclamation-triangle"></i>Your tweet is longer than 140 characters<i class="fas fa-exclamation-triangle"></i></div> -->
-      <div id="missing-msg" class="error-msg"><i id="exclamation" class="fas fa-exclamation-triangle"></i><p id="msg"></p><i id="exclamation" class="fas fa-exclamation-triangle"></i></div>
+      <div id="error" class="error-msg">
+        <i id="exclamation" class="fas fa-exclamation-triangle"></i>
+        <p id="msg"></p>
+        <i id="exclamation" class="fas fa-exclamation-triangle"></i>
+      </div>
       <form class ="tweet-box" id="new-tweet" action="/tweet" method="POST">
         <div class="content">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
@@ -63,7 +67,6 @@
         </div>
       </form>
       <section id="tweets-container">
-
       </section>
     </main>
   </body>
