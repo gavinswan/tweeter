@@ -5,12 +5,11 @@ nav {
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
+  position: fixed;
+  top: 0;
   height: 120px;
   background-color: #4056A1;
-  padding-top: 1.5em;
-  padding-left: 1.5em;
-  padding-bottom: 1.5em;
-  padding-right: 1.5em;
+  padding: 1.5em;
 }
 
 /* Tweeter title */
@@ -20,11 +19,20 @@ nav {
   color: #FFFFFF;
 }
 
-div {
+.write-tweet {
   display: flex;
   flex-direction: column;
 }
 
+.arrow {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.arrow >i {
+  color: Tomato;
+}
 
 /* Write a new tweet */
 .post {

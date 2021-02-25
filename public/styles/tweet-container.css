@@ -5,6 +5,7 @@ article.tweet {
   color: #545149;
   font-family: "Source Sans Pro", sans-serif;
   opacity: 75%;
+  margin: 2em 0;
 }
 
 article.tweet:hover {
@@ -28,7 +29,7 @@ article.tweet header {
   opacity: 0;
 }
 
-.handle:hover {
+article.tweet:hover .handle {
   color: #99968c;
   opacity: 1;
 }
@@ -57,6 +58,7 @@ article.tweet footer:hover {
 
 /* Actual tweet quote */
 .tweeter {
+  overflow: auto;
   color:#545149;
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
