@@ -44,27 +44,36 @@ $(document).ready(function() {
     }
 
     $("#new-tweet").on('submit', function (event) {
+      // Prevent the default form sumission process
       event.preventDefault();
+      // Serialize() turns form data into query string because our server is configured to recieve that data format
       const serializeData = $(this).serialize();
-      console.log(serializeData);
+      // console.log(serializeData);
       if (serializeData === "text=") {
         alert("You didn't add anything to your tweet");
       }
       if (serializeData.length > 145) {
         alert("You have exceded 140 characters");
       } else {
-      $.ajax('/tweets', { method: 'POST', data: serializeData })
-      .then(console.log("this worked"));
-      }
+        $.ajax({ 
+          url:"/tweets", 
+          data: serializeData, 
+          method: "POST",
+          // success: function() {
+          //   console.log("success");
+          // }
+        }).then(() => loadTweets())
+        $("#tweet-text").trigger("reset");
+        $("#counter").text(`140`);
+        $("#tweet-text").focus();
+      } 
     });
-
     const loadTweets = function() {
       $.ajax({
-        url: "/tweets/", 
+        url: "/tweets", 
         method: 'GET',
         success: "this get request was a success"
-      }).then(renderTweets)
+      }).then((tweets) => renderTweets(tweets))
     }
-    loadTweets(renderTweets);
-    
-    });
+    loadTweets();
+  });
