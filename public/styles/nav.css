@@ -1,15 +1,17 @@
 /* Nav related css */
 /* Whole nav bar */
+
+/* Main nav container */ 
 nav {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  height: 120px;
   width: 100%;
+  padding: 1.5em;
   position: fixed;
   top: 0;
-  height: 120px;
-  background-color: #4056A1;
-  padding: 1.5em;
+  z-index: 6;
 }
 
 /* Tweeter title */
@@ -19,11 +21,13 @@ nav {
   color: #FFFFFF;
 }
 
+/* Text for "Write tweet" */
 .write-tweet {
   display: flex;
   flex-direction: column;
 }
 
+/* Styling for arrow */
 .arrow {
   font-size: 2em;
   display: flex;
@@ -38,4 +42,18 @@ nav {
 .post {
   font-family: "Source Sans Pro";
   color: #FFFFFF;
+}
+
+/* Formatting content for screen size */
+@media only screen and (max-width:1023px) {
+  nav {
+    background-color: #d47f00;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  } 
+}
+
+@media only screen and (min-width:1024px) {
+  nav {
+    background-color: blue
+  }
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <!-- Disable viewport zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -27,16 +28,13 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
       <div class="write-tweet">
         <span class="post"><b>Write</b> a new tweet</span>
-        <span class="arrow">
-          <i class="fas fa-angle-double-down"></i>
-        </span>
+        <span class="arrow"><i class="fas fa-angle-double-down"></i></span>
       </div>
     </nav>
     <header class="profile-background">
@@ -45,20 +43,18 @@
       </div>
       <br>
       <div class="tweeter-name">
-          <h2>Austen Matthews</h2>
+        <h2>Austen Matthews</h2>
       </div>
-  </header>
+    </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-      <!-- <div id="long-msg" class="error-msg"><i class="fas fa-exclamation-triangle"></i>Your tweet is longer than 140 characters<i class="fas fa-exclamation-triangle"></i></div> -->
-      <div id="error" class="error-msg">
-        <i id="exclamation" class="fas fa-exclamation-triangle"></i>
-        <p id="msg"></p>
-        <i id="exclamation" class="fas fa-exclamation-triangle"></i>
-      </div>
       <form class ="tweet-box" id="new-tweet" action="/tweet" method="POST">
         <div class="content">
+          <div id="error" class="error-msg">
+            <i id="exclamation" class="fas fa-exclamation-triangle"></i>
+            <p id="msg"></p>
+            <i id="exclamation" class="fas fa-exclamation-triangle"></i>
+          </div>
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         </div>
         <div class="btn-container">
@@ -66,8 +62,7 @@
           <output name="counter" id="counter" for="tweet-text">140</output>
         </div>
       </form>
-      <section id="tweets-container">
-      </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>

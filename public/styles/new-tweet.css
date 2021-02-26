@@ -1,3 +1,5 @@
+/* Styling for tweet box */
+
 .container {
   display: flex;
   justify-content: center;
@@ -68,4 +70,15 @@
 
 #exclamation {
   color: red;
+}
+
+/* Styling for different screen sizes */
+@media only screen and (min-width:1024px) {
+  .container {
+    width: 50%;
+    padding-top: 40px;
+  }
+  .content {
+    margin-top: 120px;
+  }
 }

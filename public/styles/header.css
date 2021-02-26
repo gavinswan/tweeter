@@ -1,3 +1,6 @@
+/* Styling for the header */
+
+/* Main styling for header */
 .profile-background {
   height: 400px;
   width: 100%;
@@ -9,9 +12,24 @@
   padding-bottom: 2em;
   background-color: #d47f00;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-
+  margin-top: 120px;
+  align-self: flex-start;
 }
+
+/* Styling for the Name of profile owner */
 .tweeter-name {
   font-family: "Source Sans Pro", sans-serif;
   color: #FFFFFF;
+}
+
+/* Styling for screen size formatting */
+@media only screen and (min-width:1024px) {
+  .profile-background {
+    float: left;
+    width: 33%;
+    margin: 50px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 170px;
+  }
 }
