@@ -7,7 +7,7 @@
   width: 90%;
   margin: 0 auto;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #98c7ec;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -21,7 +21,12 @@
   border-bottom-width: 10px;
 }
 
-
+.tweet-box {
+  background-color: #f4f1ec;
+  border: 4px solid #6b685e;
+  border-radius: 12px;
+  margin-top: 150px;
+}
 
 #tweet-text {
   color:#545149;
@@ -31,6 +36,7 @@
   resize: none;
   border-bottom: 5px solid #545149;
   font-weight: bold;
+  margin: 0px 6px;
 }
 
 .btn-container {
@@ -39,7 +45,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: bungee;
-  padding-bottom: 2em;
+  padding: 0px 12px 12px 12px
 }
 
 .button {

@@ -1,11 +1,13 @@
 /* Container that holds all tweets */
 article.tweet {
   border: 4px solid #545149;
+  border-radius: 12px;
   padding: 10px 20px;
   color: #545149;
   font-family: "Source Sans Pro", sans-serif;
   opacity: 75%;
   margin: 2em 0;
+  background-color: bisque;
 }
 
 article.tweet:hover {
@@ -59,7 +61,7 @@ article.tweet footer:hover {
 /* Actual tweet quote */
 .tweeter {
   color:#545149;
-  background-color: #f4f1ec;
+  background-color: bisque;
   font-family: "Source Sans Pro", sans-serif;
   border: none;
   resize: none;

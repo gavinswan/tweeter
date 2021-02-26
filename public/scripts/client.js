@@ -32,7 +32,7 @@ $(document).ready(function() {
       </header>
       <div class="tweeter">${escape(tweet.content.text)}</div>
       <footer>
-        <span>${tweet.created_at}</span>
+        <span>${dateOfTweet(tweet.created_at)}</span>
         <icons>
           <i class="fas fa-flag fa-xs"></i>
           <i class="fas fa-retweet fa-xs"></i>
@@ -83,3 +83,23 @@ $(document).ready(function() {
     }
     loadTweets();
   });
+
+  const dateOfTweet = function(timestamp) {
+    const howLongAgoMilliseconds = Date.now() - timestamp;
+    const millsecondsPerMin = 1000*60;
+    const millsecondsPerHour = 1000*60*60;
+    const millsecondsPerDay = 1000*60*60*24;
+    if (howLongAgoMilliseconds > millsecondsPerDay) {
+      const howLongAgoDays = Math.ceil(howLongAgoMilliseconds / millsecondsPerDay);
+      return `${howLongAgoDays} days ago`;
+    }
+    if (howLongAgoMilliseconds > millsecondsPerHour) {
+      const howLongAgoHours = Math.ceil(howLongAgoMilliseconds / millsecondsPerHour);
+      return `${howLongAgoHours} hours ago`;
+    }
+    if (howLongAgoMilliseconds > millsecondsPerMin) {
+      const howLongAgoMins = Math.ceil(howLongAgoMilliseconds / millsecondsPerMin);
+      return `${howLongAgoMins} minutes ago`
+    }
+    return "just now"
+  }
